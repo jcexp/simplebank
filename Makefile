@@ -31,6 +31,9 @@ dkps:
 test:
 	go clean -testcache && go test -v -cover ./...
 
+server:
+	go run main.go
+
 mysql: 
 	docker run --name mysql8 -p 3306:3306  -e MYSQL_ROOT_PASSWORD=secret -d mysql:8
 	
