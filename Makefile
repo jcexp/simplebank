@@ -36,5 +36,8 @@ server:
 
 mysql: 
 	docker run --name mysql8 -p 3306:3306  -e MYSQL_ROOT_PASSWORD=secret -d mysql:8
+
+mock: 
+	mockgen -package mockdb -destination db/mock/store.go github.com/jcexp/simplebank/db/sqlc Store
 	
-.PHONY: postgres createdb dropdb migrateup migratedown sqlc dkstart
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc dkstart mock
